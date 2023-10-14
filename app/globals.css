@@ -1,0 +1,111 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+    font-family: "Urbanist", sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+
+    color: rgba(0, 0, 0, 1);
+
+    font-synthesis: none;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-text-size-adjust: 100%;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    letter-spacing: 1px;
+}
+
+@layer base{
+  *{
+      @apply font-Poppins tracking-wider
+  }
+
+  .card-icon{
+    @apply absolute top-[40%]
+  }
+
+  .card-heading{
+    @apply absolute top-[60%]
+  }
+
+  .card-para{
+    @apply absolute top-[100%]
+  }
+
+  .card-box:hover .card-icon{
+    @apply top-[-25%] duration-300 ease-in
+  }
+
+  .card-box:hover .card-heading{
+    @apply top-[40%] duration-300 ease-in
+  }
+
+  .card-box:hover .card-para{
+    @apply top-[50%] duration-300 ease-in
+  }
+}
+
+html{
+  scroll-behavior:smooth;
+}
+
+.nav-text{
+    @apply hover:text-[#ff0e2c] text-[15px] tracking-wider leading-10 cursor-pointer
+}
+
+.option{
+    @apply w-[50%] h-[50px] flex items-center justify-center cursor-pointer
+}
+
+.page-icon:hover .page-icon-text{
+    display: flex;
+}
+
+.form-control{
+    width:70%
+}
+
+.Bicon{
+    position: relative;
+}
+
+.Bicon:hover{
+    color: #ff0e2c;
+}
+
+.Bicon::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: #ff0e2c;
+  transform-origin: bottom right;
+  transition: transform 0.25s ease-out;
+}
+
+.Bicon:hover::after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+
+
+@keyframes wave {
+  0% {
+    background-position-x: 1000px;
+  }
+  100% {
+    background-position-x: 0px;
+  }
+}
